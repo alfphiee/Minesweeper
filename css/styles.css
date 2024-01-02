@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(16, 4vmin);
+    grid-template-rows: repeat(16, 4vmin);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    transition: opacity 3s;
+    background: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+    z-index: 100000;
+}
+
+.overlay button {
+    background-color: rgb(30, 183, 30);
+    padding: 3vmin;
+    border: 0;
+    outline: none;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background-color: rgb(27, 131, 27);
+}
+
+.overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cell {
+    background: lightblue;
+    border: 1px solid grey;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
+.cleared {
+    background: darkslategray;
+}
+
+.\30 {
+    color: rgba(0, 0, 0, 0)
+}
